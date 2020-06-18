@@ -1,7 +1,7 @@
 :root{
     --header_height: 2.5rem;
     --button_height: 30px;
-    --column-width: 80px;
+    --column-width: 85px;
     --scaling_factor: .75;
     --content_start_from_top: 28.5vh;
     --textbox_width_factor: 14;
@@ -17,27 +17,34 @@
     height: --header_height;
     background-color: hsl(220, 10, 10);
     font-size: 13px;
-    font-family: arial,sans-serif;
     display: grid;
     grid-template-columns: repeat(1, calc(var(--column-width)*.66)) 1fr repeat(3, calc(var(--column-width)*.66));
     align-items: center;
 } 
 
 a{
+    font-family: arial,sans-serif;;
     display: inline-block;
     line-height: 24px;
     color: rgba(0,0,0,0.87);
     vertical-align: center;
     cursor: pointer;
+    text-decoration: none;
+    color: #5f6368;
+
+}
+a:hover{
+    text-decoration: underline;
+    text-emphasis: inherit;
 }
 #footer {
     position: fixed;
+    padding-left: 15px;
     bottom: 0;
     width: 100%;
     height: var(--header_height);
     margin: 0;
     font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
     display: grid;
     grid-template-columns: repeat(3, var(--column-width)) 1fr repeat(3, var(--column-width));
     justify-items: center;
@@ -98,7 +105,7 @@ button{
     min-width: 54px;
     text-align: center;
     cursor: pointer;
-user-select: none;
+    user-select: none;
 }
 button:hover {
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
