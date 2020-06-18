@@ -1,6 +1,6 @@
 :root{
     --header_height: 2.5rem;
-    --button_height: 32.5px;
+    --button_height: 30px;
     --column-width: 80px;
     --scaling_factor: .75;
     --content_start_from_top: 28.5vh;
@@ -8,24 +8,33 @@
 }
 #header {
     position: absolute;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 15px;
+    padding-right: 15px;
     top: 0;
     width: 100%;
     height: --header_height;
     background-color: hsl(220, 10, 10);
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-family: arial,sans-serif;
     display: grid;
     grid-template-columns: repeat(1, calc(var(--column-width)*.66)) 1fr repeat(3, calc(var(--column-width)*.66));
     align-items: center;
 } 
 
-
+a{
+    display: inline-block;
+    line-height: 24px;
+    color: rgba(0,0,0,0.87);
+    vertical-align: center;
+    cursor: pointer;
+}
 #footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     height: var(--header_height);
-    background-color: red;
     margin: 0;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
@@ -33,16 +42,15 @@
     grid-template-columns: repeat(3, var(--column-width)) 1fr repeat(3, var(--column-width));
     justify-items: center;
     align-items: center;
+    background-color: #f1f1f1;
 } 
 
 #container {
     position: relative;
-    background-color: yellow;
     min-height: 200vh;
 }
 #content {
     position: absolute;
-    background-color: teal;
     top: var(--content_start_from_top);
     left: 50%;
     transform: translate(-50%, -50%);
@@ -73,12 +81,30 @@
 
 }
 button{
-    max-width: 125px;
     display: inline-block;
     -moz-appearance: none;
     height: var(--button_height);
-    min-width: 60px;
+    min-width: 70px;
     max-height: var(--button_height);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family:  arial,sans-serif;
+    font-size: 14px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+user-select: none;
+}
+button:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-color: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    color: #222;
 }
 #button_search{
     grid-column: 1/2;
@@ -94,11 +120,19 @@ button{
     margin: calc(var(--button_height)* var(--scaling_factor)) 0 0 0;
 
 }
+#button_sign_in{
+    color: #fff;
+    border: 1px solid #4285f4;
+    font-weight: bold;
+    outline: none;
+    background: -moz-linear-gradient(top,#4387fd,#4683ea);;
+}
 #commitment{
     font-size: small;
     grid-column: 1/3;
     margin: calc(var(--button_height)* var(--scaling_factor)) 0 0 0;
     justify-self: center;
     font-family: arial,sans-serif;
+    color: #1a0dab;
 }
 
