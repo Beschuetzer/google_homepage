@@ -2,6 +2,9 @@
     --header_height: 2.5rem;
     --button_height: 32.5px;
     --column-width: 80px;
+    --scaling_factor: .75;
+    --content_start_from_top: 28.5vh;
+    --textbox_width_factor: 14;
 }
 #header {
     position: absolute;
@@ -16,13 +19,7 @@
     align-items: center;
 } 
 
-button{
-    display: inline-block;
-    -moz-appearance: none;
-    height: var(--button_height);
-    min-width: 60px;
-    max-height: var(--button_height);
-}
+
 #footer {
     position: fixed;
     bottom: 0;
@@ -41,12 +38,12 @@ button{
 #container {
     position: relative;
     background-color: yellow;
-    min-height: 100vh;
+    min-height: 200vh;
 }
 #content {
     position: absolute;
     background-color: teal;
-    top: 30%;
+    top: var(--content_start_from_top);
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -65,8 +62,8 @@ button{
 }
 
 #tb{
-    margin: var(--button_height) 0 0 0;
-    width: calc(var(--button_height)* 15);
+    margin: calc(var(--button_height)* var(--scaling_factor)) 0 0 0;
+    width: calc(var(--button_height)* var(--textbox_width_factor));
     height: var(--button_height);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -75,27 +72,32 @@ button{
     grid-column: 1/3;
 
 }
-
-.button{
+button{
     max-width: 125px;
     display: inline-block;
-    margin: var(--button_height) 0 0 0;
+    -moz-appearance: none;
+    height: var(--button_height);
+    min-width: 60px;
+    max-height: var(--button_height);
 }
 #button_search{
     grid-column: 1/2;
     grid-row: 3/4;
     justify-self: right;
+    margin: calc(var(--button_height)* var(--scaling_factor)) 0 0 0;
+
 }
 #button_lucky{
     grid-column: 2/3;
     grid-row: 3/4;
     justify-self: left;
+    margin: calc(var(--button_height)* var(--scaling_factor)) 0 0 0;
 
 }
 #commitment{
     font-size: small;
     grid-column: 1/3;
-    margin: var(--button_height) 0 0 0;
+    margin: calc(var(--button_height)* var(--scaling_factor)) 0 0 0;
     justify-self: center;
     font-family: arial,sans-serif;
 }
